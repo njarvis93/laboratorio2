@@ -15,9 +15,16 @@ class Medico(models.Model):
     fecha_nacimiento = models.DateField()
     especialidad = models.ManyToManyField(Especialidad)
     clinica = models.ManyToManyField(Clinica)
+    descripcion = models.TextField(max_length=300)
+    estudios = models.TextField(max_length=100);
+    email = models.EmailField()
+    photo = models.ImageField(upload_to='photos/')
 
 class Horario(models.Model):
     fecha = models.DateField()
     hora_inicio = models.DateTimeField(auto_now=False, auto_now_add=False)
     hora_fin = models.DateTimeField(auto_now=False, auto_now_add=False)
     doctor = models.ForeignKey(Medico, null=False, blank=False, on_delete=models.CASCADE)
+
+    
+        
