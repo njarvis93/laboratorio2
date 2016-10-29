@@ -6,7 +6,7 @@
 	<link rel="icon" type="image/png" href="assets/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Medical Halo</title>
+	<title>Mis Citas - Medical Halo</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
@@ -19,61 +19,11 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/material-kit.css" rel="stylesheet"/>
     <link href="assets/css/demo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css">
 
      <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 
-     	<style>
-		pre.prettyprint{
-		    background-color: #eee;
-		    border: 0px;
-		    margin-bottom: 60px;
-		    margin-top: 30px;
-		    padding: 20px;
-		    text-align: left;
-		}
-		.atv, .str{
-		    color: #05AE0E;
-		}
-		.tag, .pln, .kwd{
-		    color: #3472F7;
-		}
-		.atn{
-		    color: #2C93FF;
-		}
-		.pln{
-		    color: #333;
-		}
-		.com{
-		    color: #999;
-		}
-		.space-top{
-		    margin-top: 50px;
-		}
-		.btn-primary .caret{
-		    border-top-color: #3472F7;
-		    color: #3472F7;
-		}
-		.area-line{
-		    border: 1px solid #999;
-		    border-left: 0;
-		    border-right: 0;
-		    color: #666;
-		    display: block;
-		    margin-top: 20px;
-		    padding: 8px 0;
-		    text-align: center;
-		}
-		.area-line a{
-		    color: #666;
-		}
-		.container-fluid{
-		    padding-right: 15px;
-		    padding-left: 15px;
-		}
-		.table-shopping .td-name{
-			min-width: 130px;
-		}
-	</style>
+     	
 </head>
 
 <body>
@@ -100,6 +50,10 @@
 		<div class="collapse navbar-collapse" id="navigation-page">
 			<ul class="nav navbar-nav navbar-right">
 				<li>
+					<input type="text" class="form-control"/>
+                	<span class="material-icons form-control-feedback">search</span>
+				</li>
+				<li>
                     <a href="#">
 						<i class="material-icons">home</i>
 						Home
@@ -122,7 +76,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
-					<h1 class="title text-center">Registro Citas</h1>
+					<h1 class="title text-center"><font color="white">Mis Citas</font></h1>
 				</div>
 			</div>
 		</div>
@@ -133,10 +87,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-2"> 
-						<div class="fixed-section affix" data-spy="affix" data-offset-top="340">
+						<div class="fixed-section" data-spy="affix" data-offset-top="340">
 							<ul>
 								<li>
-									<a href="#citas">Citas</a>
+									<a href="nueva-cita">Nueva Cita</a>
 								</li>
 								<li>
 									<a href="#enfermedades">Enfermedades</a>
@@ -150,16 +104,16 @@
 								</li>
 							</ul> 
 						</div>
-					</div>
-					<div class="col-md-8  col-md-offset-1">
-					</div>
-				</div>
+					</div><!-- fin col-md-2 -->
+	<!-- Informacion de todas la citas de un paciente -->
+	<!-- Propio de esta vista -->
+	<div class="col-md-10">
 
-			<!-- here you can add your content -->
-			
-			</div>
-		</div>
-	</div>
+	</div><!-- fin col-md-10 -->
+				</div> <!-- fin row -->
+			</div> <!-- fin container -->
+		</div> <!-- fin section -->
+	</div><!-- fin el main main-raised -->
 </div>
 
 

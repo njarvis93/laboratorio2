@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% block title %}
+    Nueva Cita - Medical Halo
+{% endblock %}
+{% block titulo %}
+    Nueva Cita
+{% endblock %}
+
+{% block contenido %}
+    <form method="post">
+    {% csrf_token %}
+			<h2>Paciente</h2>
+			<br><br>
+			<div class="row">
+				<!-- Datos del paciente de la cita -->
+                <form method="get">
+				<div class="col-md-4">
+					<div class="form-group label-floating">
+						<label class="control-label" for="{{ form.paciente.name }}">{{ form.paciente.label}}</label>
+						<input type="text" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<button class="btn btn-primary btn-fab btn-fab-mini btn-round" type="submit">
+					<i class="material-icons">search</i>
+					</button>
+				</div>
+
+				<div class="col-md-4">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="optionsCheckboxes">
+							La cita es para mí
+						</label>
+					</div>
+				</div>
+                </form>
+			</div><!-- fin row -->
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group label-floating">
+						<label class="control-label" for="{{ form.paciente.name }}">Nombres</label>
+                        {{ object.paciente.cedula }}
+                        {{ object.paciente.nombre }}
+                        {{ now | date }}
+						<input type="text" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group label-floating">
+						<label class="control-label" for="{{ form.paciente.name }}">Apellidos</label>
+						<input type="text" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group label-floating">
+					<label class="control-label" for="{{ form.paciente.name }}">Fecha de Nacimiento</label>
+					<input class="datepicker form-control" type="text" value="10/28/2016"/>
+					</div>
+				</div>
+			</div><!-- fin row -->
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group label-floating">
+					<label class="control-label" for="{{ form.paciente.name }}">Teléfono</label>
+					<input type="text" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group label-floating">
+					<label class="control-label" for="{{ form.paciente.name }}">Correo</label>
+					<input type="email" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-4" align="right">
+				<button class="btn btn-primary">
+					<i class="material-icons">save</i> Guardar
+				</button>
+				</div>
+			</div>	<!-- fin row -->
+			<!-- Info de la cita -->
+			<h2>Información de la Cita</h2>
+			<br><br>
+				<div class="row">
+					<div class="col-md-2">
+						<div class="form-group label-floating">
+						<label class="control-label" for="{{ form.fecha.name }}">{{ form.fecha.label }}</label>
+						<input class="datepicker form-control" type="text" value="10/29/2016"/>
+						</div>
+					</div>
+					<div class="col-md-2 dropdown">
+						<a href="" class="btn btn-simple dropdown-toggle" data-toggle="dropdown">
+	                    	Hora
+	                    	<b class="caret"></b>
+	                	</a>
+	                	<ul class="dropdown-menu">
+	                    	<li><a href="">10:00 am</a></li>
+	                    	<li><a href="">2:00 pm</a></li>
+	                    	<li><a href="">4:00 pm</a></li>
+	                	</ul>
+					</div>
+					<div class="col-md-4">
+						<label class="control-label" for="{{ form.tipo.name }}">{{ form.tipo.label }}</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" checked>
+								Consulta
+							</label>
+							<label>
+								<input type="radio" name="optionsRadios">
+								Entrega de Examenes
+							</label>
+						</div>
+					</div>
+					<div class="col-md-4 dropdown">
+						<a href="" class="btn btn-simple dropdown-toggle" data-toggle="dropdown">
+	                    	Especialidad
+	                    	<b class="caret"></b>
+	                	</a>
+	                	<ul class="dropdown-menu">
+	                    	<li><a href="">Medicina General</a></li>
+	                    	<li><a href="">Especialidad 1</a></li>
+	                    	<li><a href="">Especialidad 2</a></li>
+	                    	<li><a href="">Especialidad 3</a></li>
+	                	</ul>
+					</div>
+				</div> <!-- fin row -->
+                <br><br>
+				<div class="row">
+					<div class="col-md-6 dropdown">
+						<a href="" class="btn btn-simple dropdown-toggle" data-toggle="dropdown">
+	                    	Medico
+	                    	<b class="caret"></b>
+	                	</a>
+	                	<ul class="dropdown-menu">
+	                    	<li><a href="">Medico A</a></li>
+	                    	<li><a href="">Medico B</a></li>
+	                    	<li><a href="">Medico C</a></li>
+	                    	<li class="divider"><a href="">Cualquiera</a></li>
+	                	</ul>
+					</div>
+					<div class="col-md-6 dropdown">
+						<a href="" class="btn btn-simple dropdown-toggle" data-toggle="dropdown">
+						<i class="material-icons">local_hospital</i>
+	                    	Centro de Salúd
+	                    	<b class="caret"></b>
+	                	</a>
+	                	<ul class="dropdown-menu">
+	                    	<li><a href="">Clinica A</a></li>
+	                    	<li><a href="">Hospital 1</a></li>
+	                    	<li><a href="">Hospital 2</a></li>
+	                	</ul>
+					</div>
+				</div><!-- fin de row -->
+				<div class="row">
+					<div class="col-md-10">
+						<div class="form-group label-floating">
+						<label class="control-label">Dirección</label>
+						<input type="text" class="form-control">
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group label-floating">
+						<label class="control-label">Teléfono</label>
+						<input type="text" class="form-control">
+						</div>
+					</div>
+				</div><!-- fin row -->
+				<div class="row">
+					<div class="col-md-12">
+						<textarea class="form-control" placeholder="Describa sus sintomas y otras observaciones que considere pertinente" rows="4"></textarea>
+					</div>
+				</div><!-- fin row -->
+				<div class="row" align="center">
+					<button class="btn btn-default" type="reset"><i class="material-icons">clear</i> Cancelar</button>
+					<button class="btn btn-primary" type="submit"><i class="material-icons">event</i> Agendar</button>
+				</div>
+    </form>
+{% endblock %}

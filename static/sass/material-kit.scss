@@ -30,11 +30,11 @@
  *
  * ========================================================= */
 
-@import 'material-kit/variables';
-@import 'material-kit/mixins';
-@import 'material-kit/shadows';
-@import 'material-kit/core';
+@import 'material-kit/_variables';
+@import 'material-kit/_mixins';
+@import 'material-kit/_shadows';
+@import 'material-kit/_core';
 
-@import 'material-kit/ripples';
+@import 'material-kit/_ripples';
 
-@import 'material-kit/example-pages';
+@import 'material-kit/_example-pages';
