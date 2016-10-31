@@ -1,11 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import CreateView, ListView, DetailView
-from django.core.urlresolvers import reverse_lazy
+from django.core.urlresolvers import reverse_lazy, reverse
 from apps.paciente.models import Paciente
 from apps.cita.forms import PacienteForm, CitaForm
 from apps.cita.models import Cita
 from django.utils import timezone
-
+from django.http import HttpResponseRedirect
+from django.template import loader
 # Create your views here.
 
 class CitaCreate(CreateView):
@@ -19,9 +20,11 @@ class CitaListar(ListView):
     template_name = 'medical/citas.html'
     paginate_by = 2
 
-class BuscarPaciente(DetailView):
+#def buscarPaciente(request, id_paciente):
+#    paciente = get_object_or_404(Paciente, pk=id_paciente)
+#    return HttpResponseRedirect(reverse('cita:cita_crear', args=(paciente,)))
+
+class buscarPaciente3(DetailView):
     model = Paciente
-    def get_context_data(self, **kwargs):
-        context = super(BuscarPaciente, self).get_context_data(**kwargs)
-        context['now'] = timezone.now()
-        return context
+    template_name = 'medical/cita.html'
+

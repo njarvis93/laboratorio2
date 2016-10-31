@@ -13,38 +13,33 @@
 			<br><br>
 			<div class="row">
 				<!-- Datos del paciente de la cita -->
-                <form method="get">
-				<div class="col-md-4">
-					<div class="form-group label-floating">
-						<label class="control-label" for="{{ form.paciente.name }}">{{ form.paciente.label}}</label>
-						<input type="text" class="form-control">
-					</div>
-				</div>
+                    <div class="col-md-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Nro. de Identificación</label>
+                            <input type="text" class="form-control" name="id_paciente" value="{{ id_paciente }}" id="id_paciente">
+                        </div>
+                    </div>
 
-				<div class="col-md-4">
-					<button class="btn btn-primary btn-fab btn-fab-mini btn-round" type="submit">
-					<i class="material-icons">search</i>
-					</button>
-				</div>
+                    <div class="col-md-4">
+                        <button class="btn btn-primary btn-fab btn-fab-mini btn-round" id="btnBuscar" type="submit">
+                        <i class="material-icons">search</i>
+                        </button>
+                    </div>
 
-				<div class="col-md-4">
-					<div class="checkbox">
-						<label>
-							<input type="checkbox" name="optionsCheckboxes">
-							La cita es para mí
-						</label>
-					</div>
-				</div>
-                </form>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="optionsCheckboxes">
+                                La cita es para mí
+                            </label>
+                        </div>
+                    </div>
 			</div><!-- fin row -->
 			<div class="row">
 				<div class="col-md-4">
 					<div class="form-group label-floating">
 						<label class="control-label" for="{{ form.paciente.name }}">Nombres</label>
-                        {{ object.paciente.cedula }}
-                        {{ object.paciente.nombre }}
-                        {{ now | date }}
-						<input type="text" class="form-control">
+						<input type="text" class="form-control" id="nombrePaciente">
 					</div>
 				</div>
 				<div class="col-md-4">
